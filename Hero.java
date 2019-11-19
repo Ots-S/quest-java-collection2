@@ -1,4 +1,8 @@
-public class Hero {
+import java.util.ArrayList;
+import java.util.Collections;
+
+
+public class Hero implements Comparable<Hero> {
 
     // attributs
     private String name;
@@ -9,7 +13,6 @@ public class Hero {
         this.name = name;
         this.age = age;
     }
-
     // accesseurs (getters)
     public String getName() {
         return name;
@@ -26,5 +29,10 @@ public class Hero {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public int compareTo(Hero hero1) {
+        return this.getName().compareTo(hero1.getName());
     }
 }
